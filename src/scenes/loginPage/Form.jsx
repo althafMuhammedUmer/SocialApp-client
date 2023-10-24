@@ -61,6 +61,9 @@ const Form = () => {
     for (let value in values) {
       formData.append(value, values[value]);
     }
+    console.log(values.picture.name, "picture name")
+
+    formData.append("picturePath", values.picture.name)
 
 
     const savedUserResponse = await fetch(
@@ -97,7 +100,7 @@ const Form = () => {
           token: loggedIn.token,
         })
       );
-      navigate('/home')
+      navigate('/')
     }
   };
 
